@@ -8,3 +8,5 @@ To run the sim, do as following:
 2) type command "./aes_sim.run" to run the shell script.
 
 THANK YOU! :)
+
+Changed for git test, 2015.12.5
