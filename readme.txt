@@ -1,6 +1,7 @@
-Hi!
-
-The report.pdf is in folder "doc".
+-# MIPS_AES
+-Design a MIPS CPU in Verilog; Run AES encoder in this RISC-core;
+-
+-My fisrt time to use git, so it is just a test;
 
 To run the sim, do as following:
 
@@ -9,4 +10,3 @@ To run the sim, do as following:
 
 THANK YOU! :)
 
-Changed for git test, 2015.12.5
