@@ -1,0 +1,95 @@
+ncsim: 09.20-s013: (c) Copyright 1995-2010 Cadence Design Systems, Inc.
+ncsim> source /software/cadence/ius/tools/inca/files/ncsimrc
+ncsim> 
+ncsim> # NC-Sim Command File
+ncsim> # TOOL:	ncsim	09.20-s013
+ncsim> #
+ncsim> #
+ncsim> # You can restore this configuration with:
+ncsim> #
+ncsim> #     /software/cadence/ius/tools/bin/ncsim -cdslib /home/zhangys13/MIPS_AES/sim/cds.lib -logfile ncsim.log -errormax 15 -status worklib.TestBench:module -input /home/zhangys13/MIPS_AES/sim/aes_wave.tcl
+ncsim> #
+ncsim> 
+ncsim> set tcl_prompt1 {puts -nonewline "ncsim> "}
+puts -nonewline "ncsim> "
+ncsim> set tcl_prompt2 {puts -nonewline "> "}
+puts -nonewline "> "
+ncsim> set vlog_format %h
+%h
+ncsim> set vhdl_format %v
+%v
+ncsim> set real_precision 6
+6
+ncsim> set display_unit auto
+auto
+ncsim> set time_unit module
+module
+ncsim> set heap_garbage_size -200
+-200
+ncsim> set heap_garbage_time 0
+0
+ncsim> set assert_report_level note
+note
+ncsim> set assert_stop_level error
+error
+ncsim> set autoscope yes
+yes
+ncsim> set assert_1164_warnings yes
+yes
+ncsim> set pack_assert_off {}
+ncsim> set severity_pack_assert_off {note warning}
+note warning
+ncsim> set assert_output_stop_level failed
+failed
+ncsim> set tcl_debug_level 0
+0
+ncsim> set relax_path_name 1
+1
+ncsim> set vhdl_vcdmap XX01ZX01X
+XX01ZX01X
+ncsim> set intovf_severity_level ERROR
+ERROR
+ncsim> set probe_screen_format 0
+0
+ncsim> set rangecnst_severity_level ERROR
+ERROR
+ncsim> set textio_severity_level ERROR
+ERROR
+ncsim> set vital_timing_checks_on 1
+1
+ncsim> set vlog_code_show_force 0
+0
+ncsim> set assert_count_attempts 1
+1
+ncsim> set tcl_all64 false
+false
+ncsim> set tcl_runerror_exit false
+false
+ncsim> set assert_report_incompletes 1
+1
+ncsim> set show_force 1
+1
+ncsim> set force_reset_by_reinvoke 0
+0
+ncsim> alias . run
+ncsim> alias quit exit
+ncsim> database -open -shm -into waves.shm waves -default
+Created default SHM database waves
+ncsim> probe -create -database waves TestBench.mips.Register_File.clk TestBench.mips.Register_File.rst TestBench.mips.Register_File.Register
+Created probe 1
+ncsim> probe -create -database waves TestBench.mips.PC.pc_in TestBench.mips.PC.pc_out
+Created probe 2
+ncsim> 
+ncsim> simvision -input /home/zhangys13/MIPS_AES/sim/aes_wave.tcl.svcf
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> 
+ncsim> run 100us
+Ran until 100 US + 0
+ncsim> 
+ncsim> ^C
+ncsim> exit
+ncsim: Memory Usage - 17.6M program + 17.8M data = 35.4M total
+ncsim: CPU Usage - 0.0s system + 0.1s user = 0.1s total (52.7s, 0.3% cpu)

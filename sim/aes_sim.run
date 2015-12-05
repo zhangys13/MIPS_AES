@@ -1,0 +1,34 @@
+#!/bin/csh -f
+#
+# ncupdate script generated for:
+#	worklib.TestBench:module
+#
+
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.ALU:module /home/zhangys13/MIPS_AES/src/ALU.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.ALU_Control:module /home/zhangys13/MIPS_AES/src/ALU_Control.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.Adder:module /home/zhangys13/MIPS_AES/src/Adder.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.Data_Memory:module /home/zhangys13/MIPS_AES/src/dcache.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.EX_MEM:module /home/zhangys13/MIPS_AES/src/EX_MEM.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.Forwarding:module /home/zhangys13/MIPS_AES/src/Forwarding.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.Hazard_Detection:module /home/zhangys13/MIPS_AES/src/Hazard_Detection.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.ID_EX:module /home/zhangys13/MIPS_AES/src/ID_EX.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.IF_ID:module /home/zhangys13/MIPS_AES/src/IF_ID.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.MEM_WB:module /home/zhangys13/MIPS_AES/src/MEM_WB.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.MUX2_32bit:module /home/zhangys13/MIPS_AES/src/MUX2_32bit.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.MUX2_5bit:module /home/zhangys13/MIPS_AES/src/MUX2_5bit.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.MUX3_32bit:module /home/zhangys13/MIPS_AES/src/MUX_3x32bit.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.PC:module /home/zhangys13/MIPS_AES/src/PC.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.Register_File:module /home/zhangys13/MIPS_AES/src/Register_File.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.SignExt:module /home/zhangys13/MIPS_AES/src/SignExt.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.TestBench:module /home/zhangys13/MIPS_AES/tb/Testbench.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.ZeroExt:module /home/zhangys13/MIPS_AES/src/ZeroExt.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.addr_shift:module /home/zhangys13/MIPS_AES/src/addr_shift.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.control:module /home/zhangys13/MIPS_AES/src/control.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.equal:module /home/zhangys13/MIPS_AES/src/Equal.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.icache:module /home/zhangys13/MIPS_AES/src/icache.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.mux2_15bit:module /home/zhangys13/MIPS_AES/src/mux2_15bit.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.not_equal:module /home/zhangys13/MIPS_AES/src/not_equal.v
+/software/cadence/ius/tools/bin/ncvlog -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -LINEDEBUG -ERRORMAX 15 -STATUS -NOCOPYRIGHT -SPECIFICUNIT worklib.pipelined_mips:module /home/zhangys13/MIPS_AES/src/pipelined_mips.v
+/software/cadence/ius/tools/bin/ncelab -CDSLIB /home/zhangys13/MIPS_AES/sim/cds.lib -WORK worklib -ERROR 15 -ACCESS +wc worklib.TestBench -NOCOPYRIGHT -SNAPSHOT worklib.TestBench:module
+
+ncsim -cdslib /home/zhangys13/MIPS_AES/sim/cds.lib -logfile ncsim.log -errormax 15 -status worklib.TestBench:module -input /home/zhangys13/MIPS_AES/sim/aes_wave.tcl

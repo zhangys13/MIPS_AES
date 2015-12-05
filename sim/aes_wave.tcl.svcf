@@ -1,0 +1,106 @@
+# SimVision Command Script (Tue Jun 30 09:13:14 PM HKT 2015)
+#
+# Version 09.20.s013
+#
+# You can restore this configuration with:
+#
+#     /software/cadence/ius/tools/bin/ncsim -cdslib /home/zhangys13/MIPS_AES/sim/cds.lib -logfile ncsim.log -errormax 15 -status worklib.TestBench:module -input /home/zhangys13/MIPS_AES/sim/aes_wave.tcl
+#
+
+
+#
+# Preferences
+#
+preferences set toolbar-SimControl-WatchList {
+  usual
+  hide vplan
+}
+preferences set toolbar-SimControl-WaveWindow {
+  usual
+  hide vplan
+}
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 4
+}
+
+#
+# Simulator
+#
+database require simulator -hints {
+	simulator "/software/cadence/ius/tools/bin/ncsim -cdslib /home/zhangys13/MIPS_AES/sim/cds.lib -logfile ncsim.log -errormax 15 -status worklib.TestBench:module -input /home/zhangys13/MIPS_AES/sim/aes_wave.tcl -input aes_wave.tcl"
+}
+
+#
+# Cursors
+#
+set time 99710ns
+if {[catch {cursor new -name  TimeA -time $time}] != ""} {
+    cursor set -using TimeA -time $time
+}
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {
+{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}
+}
+mmap new -reuse -name {Example Map} -radix %x -contents {
+{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}
+}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 700x500+5+49}] != ""} {
+    window geometry "Design Browser 1" 700x500+5+49
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope [subst -nobackslashes -nocommands simulator::TestBench.mips.PC ]
+browser yview see [subst -nobackslashes -nocommands simulator::TestBench.mips.PC ]
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1005+0+25}] != ""} {
+    window geometry "Waveform 1" 1920x1005+0+25
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 75
+cursor set -using TimeA -time 99,710ns
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst -nobackslashes -nocommands {
+	simulator::TestBench.mips.Register_File.clk
+	simulator::TestBench.mips.Register_File.rst
+	{simulator::TestBench.mips.PC.pc_out[31:0]}
+} ]]
+set id [waveform add -signals [subst -nobackslashes -nocommands {
+	{simulator::TestBench.mips.Register_File.Register[0:31]}
+} ]]
+waveform hierarchy expand $id
+
+waveform xview limits 97615ns 97959ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 700x250+5+578
